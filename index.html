@@ -32,6 +32,20 @@ body, html {height: 100%}
     <!-- Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> -->
   </div>
 </div>
-
+<script>
+$(document).ready(function() {
+    document.onkeydown = function(e){
+        if (e.ctrlKey &&
+            (e.keyCode === 67 ||
+                e.keyCode === 86 ||
+                e.keyCode === 85 ||
+                e.keyCode === 117)) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+});
+</script>
 </body>
 </html>
