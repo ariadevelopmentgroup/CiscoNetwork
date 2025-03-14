@@ -17,7 +17,7 @@ body, html {height: 100%}
 }
 </style>
 </head>
-<BODY oncontextmenu="return false">
+<body onmousedown="return false" onselectstart="return false" id="top">
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
@@ -33,19 +33,4 @@ body, html {height: 100%}
   </div>
 </div>
 </body>
-  <script>
-$(document).ready(function() {
-    document.onkeydown = function(e){
-        if (e.ctrlKey &&
-            (e.keyCode === 67 ||
-                e.keyCode === 86 ||
-                e.keyCode === 85 ||
-                e.keyCode === 117)) {
-            return false;
-        } else {
-            return true;
-        }
-    };
-});
-</script>
 </html>
