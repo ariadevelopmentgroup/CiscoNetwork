@@ -1,46 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-<title>aria</title>
-<meta charset="UTF-8">
-<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-<style>
-/*======================
-    404 page
-=======================*/
+  <meta charset="UTF-8">
+  <title>404 page</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Arvo'><link rel="stylesheet" href="./style.css">
 
-
-.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
-}
-
-.page_404  img{ width:100%;}
-
-.four_zero_four_bg{
- 
- background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
-    height: 400px;
-    background-position: center;
- }
- 
- 
- .four_zero_four_bg h1{
- font-size:80px;
- }
- 
-  .four_zero_four_bg h3{
-			 font-size:80px;
-			 }
-			 
-			 .link_404{			 
-	color: #fff!important;
-    padding: 10px 20px;
-    background: #39ac31;
-    margin: 20px 0;
-    display: inline-block;}
-	.contant_box_404{ margin-top:-50px;}
-</style>
 </head>
-<body onmousedown="return false" onselectstart="return false" id="top">
+<body>
+<!-- partial:index.partial.html -->
 <section class="page_404">
 	<div class="container">
 		<div class="row">	
@@ -54,65 +22,19 @@
 		
 		<div class="contant_box_404">
 		<h3 class="h2">
-		Կարծես կապի խափանում կա։
+		Look like you're lost
 		</h3>
 		
-		<p>Ձեր փնտրած էջը գույություն ունի, պարզապես կայքը գտնվում է կառուցման փուլում։</p>
+		<p>the page you are looking for not avaible!</p>
 		
-		<a href="" class="link_404">Կվերադառնանք 60 օրից։</a>
+		<a href="" class="link_404">Go to Home</a>
 	</div>
 		</div>
 		</div>
 		</div>
 	</div>
 </section>
+<!-- partial -->
   
-  <script type="text/javascript">
-function click (e) {
-  if (!e)
-    e = window.event;
-  if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
-    if (window.opera)
-      window.alert("");
-    return false;
-  }
-}
-if (document.layers)
-  document.captureEvents(Event.MOUSEDOWN);
-document.onmousedown = click;
-document.oncontextmenu = click;
-</script>
-  
-<script>
-        // Disable right-click across the whole page
-        document.addEventListener('contextmenu', function(event) {
-            event.preventDefault();
-            alert('Աջ սեղմումն անջատված է:');
-        });
-
-        // Detect if user tries to use the keyboard shortcuts (like Ctrl+C, Ctrl+S)
-        document.addEventListener('keydown', function(event) {
-            if ((event.ctrlKey && event.key === 'c') || (event.ctrlKey && event.key === 's')) {
-                event.preventDefault();
-                alert('Պատճենումը կամ պահպանումն անջատված է այս կայքում:');
-            }
-        });
-
-        // Detect screenshot attempt (very basic and not fully effective)
-        function detectScreenshot() {
-            let startTime = Date.now();
-            setTimeout(function() {
-                if (Date.now() - startTime < 100) {
-                    alert("Screenshots might be detected.");
-                }
-            }, 100);
-        }
-
-        window.addEventListener('keydown', function (e) {
-            if (e.key === 'PrintScreen' || e.key === 'F12') {
-                detectScreenshot();
-            }
-        });
-    </script>
 </body>
 </html>
