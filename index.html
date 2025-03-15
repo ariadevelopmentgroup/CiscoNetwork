@@ -15,10 +15,24 @@ body, html {height: 100%}
   background-position: center;
   background-size: cover;
 }
+  /* Disable text selection */
+        body {
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version */
+        }
+
+        /* Disable image context menu */
+        img {
+            pointer-events: none;
+        }
 </style>
 </head>
 <body onmousedown="return false" onselectstart="return false" id="top">
-
+<h1>Մի գողացի՛ր!!!</h1>
+    <p>Դուք չեք կարող պատճենել այն:</p>
+    <img src="image.jpg" alt="No right-click image" />
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
   </div>
@@ -47,5 +61,39 @@ if (document.layers)
 document.onmousedown = click;
 document.oncontextmenu = click;
 </script>
+
+  <script>
+<script>
+        // Disable right-click across the whole page
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+            alert('Right-click is disabled.');
+        });
+
+        // Detect if user tries to use the keyboard shortcuts (like Ctrl+C, Ctrl+S)
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey && event.key === 'c') || (event.ctrlKey && event.key === 's')) {
+                event.preventDefault();
+                alert('Copying or saving is disabled on this site.');
+            }
+        });
+
+        // Detect screenshot attempt (very basic and not fully effective)
+        function detectScreenshot() {
+            let startTime = Date.now();
+            setTimeout(function() {
+                if (Date.now() - startTime < 100) {
+                    alert("Screenshots might be detected.");
+                }
+            }, 100);
+        }
+
+        window.addEventListener('keydown', function (e) {
+            if (e.key === 'PrintScreen' || e.key === 'F12') {
+                detectScreenshot();
+            }
+        });
+    </script>
+  </script>
 </body>
 </html>
