@@ -2,13 +2,15 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>404 page</title>
+  <title>404 Էջ</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Arvo'><link rel="stylesheet" href="./style.css">
 
 </head>
-<body>
-<!-- partial:index.partial.html -->
+
+<body onmousedown="return false" onselectstart="return false" id="top">
+
+
 <section class="page_404">
 	<div class="container">
 		<div class="row">	
@@ -22,19 +24,34 @@
 		
 		<div class="contant_box_404">
 		<h3 class="h2">
-		Look like you're lost
+		Կարծես թե կապի խափանում կա
 		</h3>
 		
-		<p>the page you are looking for not avaible!</p>
+		<p>Էջը, որը դուք փնտրել եք իրականում գոյություն ունի, պարզապես այն գտնվում է կառուցման փուլում։</p>
 		
-		<a href="" class="link_404">Go to Home</a>
+		<a href="" class="link_404">Չսեղմել 😁</a>
 	</div>
 		</div>
 		</div>
 		</div>
 	</div>
 </section>
-<!-- partial -->
+
+<script type="text/javascript">
+function click (e) {
+  if (!e)
+    e = window.event;
+  if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
+    if (window.opera)
+      window.alert("");
+    return false;
+  }
+}
+if (document.layers)
+  document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown = click;
+document.oncontextmenu = click;
+</script>
   
 </body>
 </html>
