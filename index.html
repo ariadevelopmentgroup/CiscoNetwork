@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <title>aria</title>
@@ -21,7 +21,6 @@ body, html {height: 100%}
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
-<!-- Logo -->
   </div>
   <div class="w3-display-middle">
     <div align="center">
@@ -31,9 +30,208 @@ body, html {height: 100%}
   </div>
     </div>
   <div class="w3-display-bottomleft w3-padding-large">
-    <!-- Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> -->
   </div>
 </div>
+  <script type="text/javascript">
+function click (e) {
+  if (!e)
+    e = window.event;
+  if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
+    if (window.opera)
+      window.alert("");
+    return false;
+  }
+}
+if (document.layers)
+  document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown = click;
+document.oncontextmenu = click;
+</script>
+</body>
+</html>
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>aria</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d3d3d3;
+}
+.accordion{
+    max-width: 530px;
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow:  0 2px 5px rgba(0,0,0,0.2);
+  display: grid;
+  gap: 0.5rem;
+}
+.accordion .accordion-content{
+    margin: 0px 0;
+    border-radius: 4px;
+    background: #F0FAFF;
+    border: 1px solid #CCEEFF;
+    overflow: hidden;
+}
+.accordion-content:nth-child(2){
+    background-color: #F0FAFF;
+    border-color: #CCEEFF;
+}
+.accordion-content:nth-child(3){
+    background-color: #F0FAFF;
+    border-color: #CCEEFF;
+}
+.accordion-content:nth-child(4){
+    background-color: #F0FAFF;
+    border-color: #CCEEFF;
+}
+.accordion-content.open{
+    padding-bottom: 10px;
+}
+.accordion-content header{
+    display: flex;
+    min-height: 50px;
+    padding: 0 15px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s linear;
+}
+
+.accordion-content header .title{
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+.accordion-content header i{
+    font-size: 15px;
+    color: #333;
+}
+.accordion-content .description{
+    height: 0;
+    font-size: 12px;
+    color: #333;
+    font-weight: 400;
+    padding: 0 15px;
+    transition: all 0.2s linear;
+}
+</style>
+</head>
+<body onmousedown="return false" onselectstart="return false" id="top">
+<div class="accordion">
+
+  <div class="accordion-content">
+    <header>
+      <span class="title">What is Web Development?</span>
+      <i class="fa-solid fa-plus"></i>
+    </header>
+
+    <p class="description">
+      Web development is the process of creating websites and web applications that are accessible through the internet. It involves designing, coding, and testing the various components of a website, including its layout, features, and functionality.
+    </p>
+  </div>
+
+  <div class="accordion-content">
+    <header>
+      <span class="title">Վերնագիր 2</span>
+      <i class="fa-solid fa-plus"></i>
+    </header>
+
+    <p class="description">
+      Some popular web development frameworks include React, Angular, Vue.js, and Laravel. These frameworks provide a structured approach to building web applications and can help developers streamline the development process.
+    </p>
+  </div>
+
+  <div class="accordion-content">
+    <header>
+      <span class="title">What is Responsive Design?</span>
+      <i class="fa-solid fa-plus"></i>
+    </header>
+
+    <p class="description">
+      Responsive design is a design approach that ensures websites and web applications are optimized for different screen sizes and devices. This means that the website or application will adjust its layout and content to provide the best possible user experience on devices ranging from desktop computers to mobile phones.
+    </p>
+  </div>
+
+  <div class="accordion-content">
+    <header>
+      <span class="title">What is SEO?</span>
+      <i class="fa-solid fa-plus"></i>
+    </header>
+
+    <p class="description">
+      SEO, or search engine optimization, is the process of optimizing a website or web application to increase its visibility and ranking in search engine results pages. This involves a range of techniques, including keyword research, content optimization, and link building, all aimed at improving the website's relevance and authority in the eyes of search engines like Google.
+    </p>
+  </div>
+</div>
+<script>
+// select all the accordion contents on the page
+const accordionContent = document.querySelectorAll(".accordion-content");
+
+// for each accordion content
+accordionContent.forEach((item, index) => {
+  // find the header element
+  let header = item.querySelector("header");
+  // add a click event listener to the header element
+  header.addEventListener("click", () => {
+    // toggle the 'open' class on the accordion content
+    item.classList.toggle("open");
+    // find the description element
+    let description = item.querySelector(".description");
+    // if the accordion content is open
+    if (item.classList.contains("open")) {
+      // set the height of the description element to the full height of its contents
+      description.style.height = `${description.scrollHeight}px`;
+      // replace the 'fa-plus' class with the 'fa-minus' class on the accordion content icon
+      item.querySelector("i").classList.replace("fa-plus", "fa-minus");
+    } else {
+      // set the height of the description element to 0
+      description.style.height = "0px";
+      // replace the 'fa-minus' class with the 'fa-plus' class on the accordion content icon
+      item.querySelector("i").classList.replace("fa-minus", "fa-plus");
+    }
+    // close all the other accordion contents except the current one
+    removeOpen(index);
+  });
+});
+
+// a function to close all the other accordion contents except the current one
+function removeOpen(index1) {
+  accordionContent.forEach((item2, index2) => {
+    // if the current accordion content is not the same as the one being clicked
+    if (index1 != index2) {
+      // remove the 'open' class from the accordion content
+      item2.classList.remove("open");
+      // set the height of the description element to 0
+      let des = item2.querySelector(".description");
+      des.style.height = "0px";
+      // replace the 'fa-minus' class with the 'fa-plus' class on the accordion content icon
+      item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
+    }
+  });
+}
+</script>
   <script type="text/javascript">
 function click (e) {
   if (!e)
